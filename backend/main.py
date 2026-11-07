@@ -9,7 +9,7 @@ THRESHOLD = 90.0
 app = FastAPI(title='RegionalPulse API', version='0.2.0')
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=['http://localhost:5173', 'http://127.0.0.1:5173', 'http://localhost:3000'],
+    allow_origins=['http://localhost:5173', 'http://127.0.0.1:5173', 'http://localhost:3000', 'https://mrittika278.github.io'],
     allow_credentials=True,
     allow_methods=['*'],
     allow_headers=['*'],
