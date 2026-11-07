@@ -15,14 +15,17 @@ import type {
   ErrorAnalysisResponse,
 } from './types';
 
+// Deployed FastAPI backend
+const API_BASE_URL = 'https://regionalpulse.onrender.com';
+
 const get = async <T>(url: string): Promise<T> => {
-  const r = await fetch(url);
+  const r = await fetch(`${API_BASE_URL}${url}`);
   if (!r.ok) throw new Error(await r.text());
   return r.json();
 };
 
 const post = async <T>(url: string, body: unknown): Promise<T> => {
-  const r = await fetch(url, {
+  const r = await fetch(`${API_BASE_URL}${url}`, {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify(body),
